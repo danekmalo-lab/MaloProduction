@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta a MaloProduction para solicitar información y cotizaciones.">
+    <title>MaloProduction | Contacto</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monofett&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark mp-nav">
+        <div class="container">
+            <a class="navbar-brand mp-brand" href="index.html">MALO <span>PRODUCTION</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portafolio.html">Portafolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html" aria-current="page">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container py-4">
+    <section class="text-center page-heading mb-4">
+        <p class="eyebrow">EMPECEMOS ALGO NUEVO</p>
+        <h1>Contacto y cotizaciones</h1>
+        <p class="lead-text">Completa los datos para describir tu proyecto.</p>
+    </section>
+
+    <div class="row g-4 justify-content-center">
+        <aside class="col-12 col-lg-4">
+            <div class="promo-card h-100 text-start">
+                <h2 class="h4">Cuéntanos tu idea</h2>
+                <p>Podemos conversar sobre grabación, edición, videos musicales y contenido para redes sociales.</p>
+                <hr class="border-secondary">
+                <p><strong>Antes de enviar:</strong> revisa tu correo y describe brevemente lo que necesitas.</p>
+                <p class="small">Este formulario es una demostración. No envía correos ni contacta un servidor.</p>
+            </div>
+        </aside>
+
+        <section class="col-12 col-lg-7">
+            <div class="content-card text-start">
+                <form id="formContacto" novalidate>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label for="nombre" class="form-label">Nombre completo *</label>
+                            <input class="form-control" type="text" id="nombre" name="nombre" minlength="3" maxlength="80" autocomplete="name" required>
+                            <div class="invalid-feedback">Escribe tu nombre con al menos 3 caracteres.</div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="correo" class="form-label">Correo electrónico *</label>
+                            <input class="form-control" type="email" id="correo" name="correo" autocomplete="email" required>
+                            <div class="invalid-feedback">Escribe un correo válido.</div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="telefono" class="form-label">Teléfono (opcional)</label>
+                            <input class="form-control" type="tel" id="telefono" name="telefono" inputmode="tel" pattern="[0-9 +()-]{7,20}">
+                            <div class="invalid-feedback">Revisa el formato del teléfono.</div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="servicio" class="form-label">Servicio de interés *</label>
+                            <select class="form-select" id="servicio" name="servicio" required>
+                                <option value="">Selecciona un servicio</option>
+                                <option value="Grabación de video">Grabación de video</option>
+                                <option value="Edición de video">Edición de video</option>
+                                <option value="Video musical">Video musical</option>
+                                <option value="Contenido para redes sociales">Contenido para redes sociales</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                            <div class="invalid-feedback">Selecciona un servicio.</div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="presupuesto" class="form-label">Presupuesto aproximado *</label>
+                            <select class="form-select" id="presupuesto" name="presupuesto" required>
+                                <option value="">Selecciona un rango</option>
+                                <option>Menos de $1,000 MXN</option>
+                                <option>$1,000–$3,000 MXN</option>
+                                <option>$3,001–$5,000 MXN</option>
+                                <option>Más de $5,000 MXN</option>
+                                <option>Por definir</option>
+                            </select>
+                            <div class="invalid-feedback">Selecciona un presupuesto.</div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label for="fecha" class="form-label">Fecha ideal (opcional)</label>
+                            <input class="form-control" type="date" id="fecha" name="fecha">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="mensaje" class="form-label">Describe tu proyecto *</label>
+                            <textarea class="form-control" id="mensaje" name="mensaje" rows="5" minlength="15" maxlength="1000" required placeholder="Cuéntanos qué quieres producir y cualquier detalle importante."></textarea>
+                            <div class="d-flex justify-content-between gap-2">
+                                <div class="invalid-feedback" id="errorMensaje">Describe tu proyecto con al menos 15 caracteres.</div>
+                                <small class="form-text"><span id="contador">0</span>/1000</small>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="acepto" name="acepto" required>
+                                <label class="form-check-label" for="acepto">Confirmo que los datos ingresados son correctos. *</label>
+                                <div class="invalid-feedback">Debes confirmar tus datos.</div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-flex flex-wrap gap-2">
+                            <button type="submit" class="btn btn-rojo">Validar formulario</button>
+                            <button type="reset" class="btn btn-outline-light">Limpiar formulario</button>
+                        </div>
+
+                        <div class="col-12">
+                            <div id="resultadoFormulario" class="form-result" role="status" aria-live="polite" hidden></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="site-footer mt-auto">
+    <div class="container"><p class="mb-0">© 2026 MaloProduction · Producción audiovisual</p></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="script.js"></script>
+</body>
+</html>
