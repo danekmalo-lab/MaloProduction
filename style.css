@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -20,16 +21,16 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
+/* Encabezado */
 header {
     padding-bottom: 0.5rem;
 }
 
 h1 {
     font-family: "Monofett", monospace;
-    font-size: 3rem; /* Ajusta el tamaño para que luzca bien este estilo de fuente */
+    font-size: 3rem;
     font-weight: 400;
 }
 
@@ -37,20 +38,39 @@ h1 span {
     color: #e50914;
 }
 
+/* Menú de navegación */
 nav {
     margin-top: 0.5rem;
 }
 
-.enlace-menu {
+.enlace-menu,
+.navbar-nav .nav-link {
     color: #fff;
     margin: 0 0.5rem;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.enlace-menu:hover {
+.enlace-menu:hover,
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link[aria-current="page"] {
     color: #e50914;
 }
+
+/* Contenido principal */
+main {
+    flex: 1;
+}
+
+.bloque-seccion {
+    margin: 1.5rem 0;
+}
+
+.bloque-seccion h2 {
+    margin-bottom: 0.5rem;
+}
+
 
 .contenedor-servicios {
     display: flex;
@@ -63,12 +83,13 @@ nav {
 
 .contenido-centro {
     flex: 2;
+    min-width: 0;
 }
 
 .card-promo {
     flex: 1;
     background: #1e1e1e;
-    border: none; /* Se eliminó el contorno rojo */
+    border: none;
     border-radius: 6px;
     padding: 1rem;
     text-align: center;
@@ -83,53 +104,182 @@ nav {
 .card-promo p {
     font-size: 0.85rem;
     color: #ccc;
-    line-height: 1.3;
+    line-height: 1.5;
 }
 
-.bloque-seccion {
-    margin: 1.5rem 0;
-}
 
-.bloque-seccion h2 {
-    margin-bottom: 0.5rem;
-}
-
-.card-imagen img, img {
+.card-imagen img,
+main img {
+    display: block;
     width: 100%;
     max-width: 800px;
+    height: auto;
     border-radius: 6px;
-    margin: 0.5rem 0;
+    margin: 0.5rem auto;
 }
+
+
+.card,
+.card-promo {
+    overflow-wrap: break-word;
+}
+
+.card {
+    background-color: #1e1e1e;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 6px;
+}
+
+.card h2,
+.card h3,
+.card .card-title {
+    color: #e50914;
+}
+
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    width: 100%;
     max-width: 800px;
-    margin: 1rem auto 0 auto;
+    margin: 1rem auto;
+    text-align: left;
 }
 
-input, button {
-    padding: 0.6rem;
+input,
+select,
+textarea,
+button {
+    width: 100%;
+    padding: 0.7rem;
     border-radius: 4px;
     border: 1px solid #444;
     font-family: inherit;
+    font-size: 1rem;
 }
 
-button {
+input,
+select,
+textarea {
+    background: #fff;
+    color: #111;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button,
+.btn-danger {
     background: #e50914;
     color: #fff;
     border: none;
     font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-button:hover {
+button:hover,
+.btn-danger:hover {
     background: #b80710;
+    color: #fff;
 }
+
+
+.is-invalid {
+    border: 2px solid #e50914 !important;
+}
+
+.is-valid {
+    border: 2px solid #198754 !important;
+}
+
+#resultadoFormulario {
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+#resultadoFormulario.success {
+    background: #183d29;
+    color: #d1f7df;
+}
+
+#resultadoFormulario.error {
+    background: #4a171b;
+    color: #ffe0e2;
+}
+
 
 footer {
     font-size: 0.8rem;
     color: #888;
     padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .contenedor-servicios {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .contenido-centro,
+    .card-promo {
+        width: 100%;
+    }
+
+    .card-imagen img,
+    main img {
+        max-width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 0.25rem 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.75rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    .card-promo {
+        padding: 0.8rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
 }
