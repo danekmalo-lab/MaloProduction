@@ -146,3 +146,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+
+
+const videoDron = document.getElementById("videoDron");
+
+if (videoDron) {
+    videoDron.playbackRate = 0.9;
+
+    videoDron.addEventListener("loadedmetadata", () => {
+        videoDron.playbackRate = 0.9;
+    });
+
+    videoDron.play().catch(error => {
+        console.log("El navegador no permitió la reproducción automática:", error);
+    });
+}
